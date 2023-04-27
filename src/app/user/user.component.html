@@ -1,0 +1,16 @@
+<p>user works!</p>
+<div class="container-fluid d-flex flex-wrap">
+    <div *ngFor="let item of res" class="mx-auto">
+        <!-- <p>{{item.id}} {{item.name}}</p> -->
+        <!-- <p>{{item.name}}</p> -->
+        <div class="card my-2 mx-2" style="width: 18rem;">
+            <img src={{item.avatar_url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.login}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a routerLink="profile" class="btn btn-primary">Go to Profile</a>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<p>dashboard works!</p>
+<!-- String Pipes -->
+<h1>{{myName | uppercase}}</h1>
+<h1>{{myName | lowercase}}</h1>
+<h1>{{myName | titlecase}}</h1>
+<h1>{{myName | slice:0:8}}</h1>
+<div>
+    {{student| json}}
+</div>
+<!-- Number Pipes -->
+
+<h1>{{score | number:'2.2-2'}}</h1>
+<h1>{{0.25 | percent}}</h1>
+
+<!-- Date Pipes -->
+<h1>{{myDate | date:'short'}}</h1>
+<h1>{{myDate | date: 'shortDate'}}</h1>
+<h1>{{myDate | date:'shortTime'}}</h1>
+<h1>{{myDate | date:'fullDate'}}</h1>
+<h1>{{myDate | date:'medium'}}</h1>
+
+<!-- Currency Pipes -->
+<h1>{{'50000' | currency:'NGN':'symbol-narrow'}}</h1>
+<h1>{{'50000' | currency:'CAD':'symbol-narrow':'code'}}</h1>
+<h1>{{'50000' | currency:'EUR':'symbol-narrow'}}</h1>
+

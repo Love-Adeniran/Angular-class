@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto shadow bg-dark text-white">
+            <h1 class="text-center display-6">SIGN UP</h1>
+            <input type="text" class="form-control mb-3" name="firstname" placeholder="First Name" [(ngModel)]="first_name">
+            <input type="text" class="form-control mb-3" name="lastname" placeholder="Last Name" [(ngModel)]="last_name">
+            <input type="text" class="form-control mb-3" name="email" placeholder="email" [(ngModel)]="email">
+            <input type="text" class="form-control mb-3" name="password" placeholder="password" [(ngModel)]="password">
+            <button mat-raised-button color="primary" class="mb-3 w-100" (click)="signUp()">Submit</button>
+        </div>
+    </div>
+</div>
