@@ -1,1 +1,10 @@
-<p>signin works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto shadow  text-white">
+            <h1 class="text-center display-6">SIGN IN</h1>
+            <input type="text" class="form-control mb-3" name="email" placeholder="email" [(ngModel)]="email">
+            <input type="text" class="form-control mb-3" name="password" placeholder="password" [(ngModel)]="password">
+            <button mat-raised-button color="primary" class="mb-3 w-100" (click)="signIn()">Submit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+
+<div>
+    <h3>Sibling 1</h3>
+    <div *ngFor="let items of itemArray" class="shadow" style="cursor: pointer; ">
+        <h3 class="text-success text-center display-6" (click)="updateItem(items)">{{items.item}}</h3>
+    </div>
+
+</div>

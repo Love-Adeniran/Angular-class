@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-    constructor (public userService: UserService) {
+    constructor (public userService: UserService, public router: Router) {
     };
 
     public first_name = "";
@@ -23,5 +24,6 @@ export class HomeComponent {
         this.userService.signUp(obj).subscribe(data => {
             console.log(data);
         })
+        this.router.navigate(['/signin'])
     }
 }

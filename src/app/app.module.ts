@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { UserComponent } from './user/user.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AboutComponent } from './about/about.component'
 import { HomeComponent } from './home/home.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
@@ -15,11 +15,15 @@ import { SigninComponent } from './signin/signin.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { TestComponent } from './test/test.component'
+
 import { Test2Component } from './test2/test2.component'
-import { MaterialModule } from './material.module'
 import { LayoutModule } from '@angular/cdk/layout'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { NavComponent } from './nav/nav.component'
+import { HttpsInterceptor } from './https.interceptor';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component'
+import { MaterialModule } from './material.module'
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { NavComponent } from './nav/nav.component'
     TestComponent,
     Test2Component,
     NavComponent,
+    Sibling1Component,
+    Sibling2Component,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import { NavComponent } from './nav/nav.component'
     LayoutModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpsInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

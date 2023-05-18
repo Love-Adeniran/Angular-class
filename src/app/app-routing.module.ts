@@ -14,13 +14,15 @@ import { NavComponent } from './nav/nav.component';
 const routes: Routes = [
     {path: "", component:HomeComponent},
     {path: "signin", component:SigninComponent},
-    {path: "dashboard", component:DashboardComponent, canActivate:[AuthenticationGuard]},
     {path: "home", redirectTo:"/", pathMatch:"full"},
     {path: "dash", component: NavComponent},
+    {path: "dashboard", component:DashboardComponent},
     {
         path:"user",component:UserComponent, children:[
             // {path:"",component:UserComponent},
-            {path:"profile", component:ProfileComponent}
+            {path:"profile", component:ProfileComponent},
+            {path:"about", component:AboutComponent},
+            {path:"about/:username", component:DynamicPageComponent},
         ]
     },
     // {
@@ -29,8 +31,6 @@ const routes: Routes = [
     //         {path:"profile", component:ProfileComponent}
     //     ]
     // },
-    {path:"about", component:AboutComponent},
-    {path:"about/:username", component:DynamicPageComponent},
     {path:"**", component:PageNotFoundComponent}
 ];
 
